@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TallerUSS.MainPage">
+
+    <ScrollView>
+
+        <StackLayout Padding="20" VerticalOptions="Center">
+            <Frame 
+                HorizontalOptions="Center"
+                BorderColor="Green" CornerRadius="500" Padding="0">
+            <Image HorizontalOptions="Center" 
+                   Source="perfil.png" 
+           
+                   Aspect="AspectFill"/>
+                
+            </Frame>
+            <Label FontSize="20" TextColor="Black" Text="Correo:"/>
+            <Entry Placeholder="correo@correo.com" Keyboard="Email"
+                   x:Name="txtCorreo"/>
+            <Label FontSize="20" TextColor="Black" Text="Año de ingreso:"/>
+            <Picker SelectedItem="1" x:Name="picker">
+                <Picker.Items>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label FontSize="20" TextColor="Black" Text="Fecha de Nac.:"/>
+            <DatePicker Date="01/01/2001" MaximumDate="07/24/2023"
+                        x:Name="pickerFecha"/>
+            <TimePicker x:Name="pickerHora"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="optMasculino" Grid.Column="0"/>
+                <Label Text="Masculino"  Grid.Column="1" FontSize="15"/>
+                <RadioButton x:Name="optFemenino" Grid.Column="2"/>
+                <Label Text="Femenino"  Grid.Column="3" FontSize="15"/>
+
+                <CheckBox Grid.Row="1" Grid.Column="0"
+                          Color="Blue"
+                          x:Name="checkTerminos"/>
+                <Label Text="Acepto los terminos y condiciones." 
+                   TextColor="Blue" 
+                   TextDecorations="Underline"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="3"/>
+            </Grid>
+
+            <Button Text="CREAR CUENTA" BackgroundColor="Blue"
+                    TextColor="White"
+                    CornerRadius="100"
+                    x:Name="btnCrearCuenta"
+                    Clicked="btnCrearCuenta_Clicked"    
+                    Margin="20"/>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
